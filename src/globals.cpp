@@ -59,7 +59,7 @@ double gFramerate = 0.0;
 string gTitle = "";
 
 #ifdef GAME_EXECUTABLE
-Uint32 gUiThreadId = 0;
+SDL_threadID gUiThreadId = 0;
 
 string gCaseFilePath = "";
 string gSaveFilePath = "";
@@ -110,7 +110,7 @@ LocalizableContent *pgLocalizableContent = NULL;
 void EnsureUIThread()
 {
 #ifdef GAME_EXECUTABLE
-    Uint32 currentThreadId = SDL_ThreadID();
+    SDL_threadID currentThreadId = SDL_ThreadID();
 
     if (currentThreadId != gUiThreadId)
     {
